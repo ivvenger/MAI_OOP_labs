@@ -129,6 +129,19 @@ lab_click/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_click.dir/build.make CMakeFiles/lab_click.dir/build
 .PHONY : lab_click/fast
 
+#=============================================================================
+# Target rules for targets named test_executable
+
+# Build rule for target.
+test_executable: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_executable
+.PHONY : test_executable
+
+# fast build rule for target.
+test_executable/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_executable.dir/build.make CMakeFiles/test_executable.dir/build
+.PHONY : test_executable/fast
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -153,6 +166,30 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_click.dir/build.make CMakeFiles/lab_click.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+tests/TESTS.o: tests/TESTS.cpp.o
+.PHONY : tests/TESTS.o
+
+# target to build an object file
+tests/TESTS.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_executable.dir/build.make CMakeFiles/test_executable.dir/tests/TESTS.cpp.o
+.PHONY : tests/TESTS.cpp.o
+
+tests/TESTS.i: tests/TESTS.cpp.i
+.PHONY : tests/TESTS.i
+
+# target to preprocess a source file
+tests/TESTS.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_executable.dir/build.make CMakeFiles/test_executable.dir/tests/TESTS.cpp.i
+.PHONY : tests/TESTS.cpp.i
+
+tests/TESTS.s: tests/TESTS.cpp.s
+.PHONY : tests/TESTS.s
+
+# target to generate assembly for a file
+tests/TESTS.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_executable.dir/build.make CMakeFiles/test_executable.dir/tests/TESTS.cpp.s
+.PHONY : tests/TESTS.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -162,9 +199,13 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... lab_click"
+	@echo "... test_executable"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... tests/TESTS.o"
+	@echo "... tests/TESTS.i"
+	@echo "... tests/TESTS.s"
 .PHONY : help
 
 
